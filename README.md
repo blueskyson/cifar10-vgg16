@@ -13,7 +13,11 @@ EPOCH = 20
 FILENAME = "vgg16.pth"
 ```
 
+You can also download [pre-trained model](https://github.com/blueskyson/cifar10-vgg16/releases) from releases.
+
 To execute test application: `python main.py`
+
+## Screenshots
 
 ![](./images/1.png)
 
