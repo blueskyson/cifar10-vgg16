@@ -4,6 +4,7 @@ from PyQt5.QtWidgets import (
     QApplication,
     QWidget,
     QPushButton,
+    QLabel,
     QLineEdit,
     QVBoxLayout,
 )
@@ -20,13 +21,13 @@ class MainWindow(QWidget):
         self.setWindowTitle("cifar10-vgg16")
 
         button = [None] * 5
-        button[0] = QPushButton("1 show random labeled images", self)
+        button[0] = QPushButton("1. show random labeled images", self)
         button[0].clicked.connect(self.show_random_labeled_images)
-        button[1] = QPushButton("2 show model shortcut", self)
+        button[1] = QPushButton("2. show model shortcut", self)
         button[1].clicked.connect(self.show_model_shortcut)
-        button[2] = QPushButton("3 show training accuracy", self)
+        button[2] = QPushButton("3. show training accuracy", self)
         button[2].clicked.connect(self.show_training_accuracy)
-        button[3] = QPushButton("4 show test", self)
+        button[3] = QPushButton("4. show test", self)
         button[3].clicked.connect(self.show_test)
         self.index_txt = QLineEdit("0")
 
@@ -34,6 +35,7 @@ class MainWindow(QWidget):
         vbox.addWidget(button[0])
         vbox.addWidget(button[1])
         vbox.addWidget(button[2])
+        vbox.addWidget(QLabel("select test image:"))
         vbox.addWidget(self.index_txt)
         vbox.addWidget(button[3])
         vbox.addStretch(1)
